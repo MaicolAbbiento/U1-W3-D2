@@ -279,7 +279,14 @@
       /* EXTRA ESERCIZIO 15
                   Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
                 */
-
+      const changeColorWhithRandom = function () {
+        let h2 = document.getElementById("changeMyColor")
+        let red = Math.round(Math.random * 255)
+        let green = Math.round(Math.random * 255)
+        let blue = Math.round(Math.random * 255)
+        h2.style.color = `rgb(${red},${green}, ${blue})`
+      }
+      changeColorWhithRandom()
       /* EXTRA ESERCIZIO 16
                   Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
                 */
