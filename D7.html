@@ -73,10 +73,11 @@
     <footer>
       <h3>
         DOM Manipulation is super
+
         <a
           href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
-          >AWESOME!</a
-        >
+          >AWESOME!
+        </a>
       </h3>
     </footer>
     <script>
@@ -156,9 +157,8 @@
                 */
 
       const hideFirstUl = function () {
-        let uLIst = document.getElementsByTagName("ul")
-        let firstList = uLIst[0]
-        firstList.remove(uLIst)
+        let uLIst = document.getElementById("firstList")
+        firstList.remove()
       }
       hideFirstUl()
 
@@ -169,7 +169,7 @@
       const paintItGreen = function () {
         let ulBackGround = document.querySelectorAll("ul")
         ulBackGround.forEach((el) => {
-          el.style.background = "green"
+          el.style.backgroundColor = "green"
         })
       }
       paintItGreen()
@@ -206,16 +206,39 @@
                 */
 
       const generateTable = function () {
-        let table = document.createElement("table")
-        table.setAttribute("id", "tableArea")
-        let row = document.createElement("tr")
-        let header = ["immagine", "nome - prodotto", "quantità", "prezzo"]
-        header.forEach((el) => {
-          let collum = document.createElement("th")
-          collum.textContent = el
-          row.appendChild(collum)
-        })
-        table.appendChild(row)
+        let tableArea = document.getElementById("tableArea")
+        tableArea.innerHTML = `
+        <table> 
+          <tr>
+           <th>immagine</th>
+           <th> nome</th>
+           <th> prodotto</th>
+           <th> prezzo </th>
+           </tr>
+           </tr> 
+         <tr>
+           <td>1</td>
+           <td> 2</td>
+           <td> 3</td>
+           <td> 4</td>
+           </tr>
+           <td>1</td>
+           <td> 2</td>
+           <td> 3</td>
+           <td> 4</td>
+           </tr>
+           <td>1</td>
+           <td> 2</td>
+           <td> 3</td>
+           <td> 4</td>
+           </tr>
+           <td>1</td>
+           <td> 2</td>
+           <td> 3</td>
+           <td> 4</td>
+           </tr>
+           </table>
+           `
       }
       generateTable()
       /* ESERCIZIO 12
@@ -245,6 +268,7 @@
 
         table.appendChild(newRow)
       }
+      sddRow("cio")
 
       /* ESERCIZIO 14
                   Crea una funzione che nasconda le immagini della tabella quando eseguita
